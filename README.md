@@ -16,10 +16,10 @@ conda activate RBF-PINN
 pip install [following...]
 ```
 - `torch == 2.0`
-- `torchvision`
 - `torchsummary`
 - `numpy == 1.24.3`
 - `matplotlib`
+- `pyDOE`
 
 ## Citation
 ```
