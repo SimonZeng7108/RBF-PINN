@@ -3,6 +3,9 @@ This is the official repo for the paper **[Training Dynamics in Physics-Informed
 **Preprint, Under Review**<br/>
 Chengxi Zeng, Tilo Burghardtg, Alberto M Gambaruto<br/>
 
+Short paper: **[RBF-PINN: Non-Fourier Positional Embedding in Physics-Informed Neural Networks](https://arxiv.org/abs/2402.08367)**.<br/>
+International Conference on Learning Representations (ICLR 2024), AI4DifferentialEquations in Science Workshop
+
 <img src="https://github.com/SimonZeng7108/RBF-PINN/blob/master/Figs/lorenz.gif" width="800" height="500"><br/>
 
 ## Abstract
