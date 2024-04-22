@@ -1,4 +1,4 @@
-# RBF-PINN - Improve your PINN with a single Feature Mapping Layer.
+## RBF-PINN: Improve your PINN with a single Feature Mapping Layer.
 This is the official repo for the paper **[Training Dynamics in Physics-Informed Neural Networks with Feature Mapping](https://arxiv.org/abs/2402.06955)**.<br/>
 **Preprint, Under Review**<br/>
 Chengxi Zeng, Tilo Burghardtg, Alberto M Gambaruto<br/>
