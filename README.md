@@ -34,5 +34,13 @@ pip install [following...]
       archivePrefix={arXiv},
       primaryClass={cs.LG}
 }
+
+@article{Zeng2024RBFPINNNP,
+  title={RBF-PINN: Non-Fourier Positional Embedding in Physics-Informed Neural Networks},
+  author={Chengxi Zeng and Tilo Burghardt and Alberto M. Gambaruto},
+  journal={ArXiv},
+  year={2024},
+  volume={abs/2402.08367},
+}
 ```
 
