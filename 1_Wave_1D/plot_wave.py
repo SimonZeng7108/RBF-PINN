@@ -60,28 +60,6 @@ plt.savefig("./results/WAVE_pred_weighted.png", dpi= 500)
 plt.show()
 
 
-print(u.shape)
-print(analytical_u.shape)
 
 L2RE = (((u - analytical_u)**2).sum()/((analytical_u)**2).sum())**0.5
 print(L2RE)
-# fig, axes = plt.subplots(1, 1, figsize=(11, 12), sharex=True)
-
-# data = (u)
-
-
-# labels = ["$u(x,y)$", "$v(x,y)$", "$p(x,y)$"]
-# for i in range(3):
-#     ax = axes[i]
-#     im = ax.imshow(
-#         data[i], cmap="rainbow", extent=[x_min, x_max, t_min, t_max], origin="lower", vmin = -2, vmax = 2)
-#     divider = make_axes_locatable(ax)
-#     cax = divider.append_axes("right", size="3%", pad="3%")
-#     fig.colorbar(im, cax=cax, label=labels[i])
-#     ax.set_title(labels[i])
-#     ax.set_xlabel("$x$")
-#     ax.set_ylabel("$y$")
-#     ax.set_aspect("equal")
-# fig.tight_layout()
-# fig.savefig("./results/solution.png", dpi=500)
-# plt.show()

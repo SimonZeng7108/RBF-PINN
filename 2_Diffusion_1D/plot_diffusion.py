@@ -62,25 +62,3 @@ L2RE = (((u - u_analytical)**2).sum()/((u_analytical)**2).sum())**0.5
 print(L2RE)
 
 
-
-
-# fig, axes = plt.subplots(3, 1, figsize=(11, 12), sharex=True)
-
-# data = (u, v, p)
-
-
-# labels = ["$u(x,y)$", "$v(x,y)$", "$p(x,y)$"]
-# for i in range(3):
-#     ax = axes[i]
-#     im = ax.imshow(
-#         data[i], cmap="rainbow", extent=[x_min, x_max, y_min, y_max], origin="lower", vmin = -2, vmax = 2)
-#     divider = make_axes_locatable(ax)
-#     cax = divider.append_axes("right", size="3%", pad="3%")
-#     fig.colorbar(im, cax=cax, label=labels[i])
-#     ax.set_title(labels[i])
-#     ax.set_xlabel("$x$")
-#     ax.set_ylabel("$y$")
-#     ax.set_aspect("equal")
-# fig.tight_layout()
-# fig.savefig("./results/solution.png", dpi=500)
-# plt.show()

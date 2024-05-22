@@ -123,32 +123,31 @@ class RBF_Layer(nn.Module):
 
 
 class RBF_DNN(nn.Module):
-    def __init__(self, dim_in, dim_out, hidden_layer_centres=[50, 40, 30, 20], ub=0, lb=0, basis_func= rbf.gaussian, activation=nn.Tanh(), order_pol = 0):
+    def __init__(self, dim_in, dim_out, hidden_layer_centres=[50, 40, 30, 20], ub=0, lb=0, basis_func= rbf.gaussian, activation=nn.Tanh()):
         super().__init__()
         self.rbf_layers = nn.ModuleList()
         self.linear_layers = nn.ModuleList()
         #input layer
-        self.rbf_layers.append(RBF_Layer(ub, lb, dim_in, hidden_layer_centres[0], basis_func, order_pol))
+        self.rbf_layers.append(RBF_Layer(ub, lb, dim_in, hidden_layer_centres[0], basis_func))
         #hidden layers
-        if order_pol != 0:
-            hidden_layer_centres[0] += order_pol + 1 
         for i in range(len(hidden_layer_centres)-1):
             self.linear_layers.append(Linear_Layer(hidden_layer_centres[i], hidden_layer_centres[i+1], activation))
         self.linear_layers.append(Linear_Layer(hidden_layer_centres[-1], dim_out, activation=None))
         self.rbf_layers.apply(weights_init)  # xavier initialization
         self.ub = torch.tensor(ub, dtype=torch.float).to(device)
         self.lb = torch.tensor(lb, dtype=torch.float).to(device)
-        
+        self.norm_rbf = nn.BatchNorm1d(hidden_layer_centres[1], affine=False) #affine = False means no learnable parameters
+
+
     def forward(self, x):
         x = (x - self.lb) / (self.ub - self.lb)
         out = x
         out = self.rbf_layers[0](out)
-        
         for i in range(len(self.linear_layers)):
             out = self.linear_layers[i](out)
+            if i == 0:
+                out = self.norm_rbf(out)
         return out
-    
-
 
 
 
